@@ -1,9 +1,10 @@
-
+import { useScroll, useTransform, motion } from 'framer-motion'
 import { useEffect, useRef, useState } from "react";
 
 const Hero = () => {
 
     const target = useRef<HTMLDivElement>(null)
+
     const [fixed, setFixed] = useState(false);
 
     const handleScroll = () => {
@@ -29,20 +30,25 @@ const Hero = () => {
 
     const arr = [...new Array(3)]
 
+    const { scrollYProgress } = useScroll({
+        target: target,
+        offset: ['end start', 'end end']
+    })
+
+    const opacity = useTransform(scrollYProgress, [0.4, 1], [0, 1])
+
 
 
     return (
-        <div className="w-full h-[200vh] relative bg-bg" ref={target}>
+        <motion.div className="w-full h-screen relative bg-bg" ref={target} style={{ opacity }}>
             <div className={`bg-bg px-5 w-full h-screen text-white ${fixed ? 'fixed top-0 left-0' : 'relative'}`}>
-
-
 
                 <div className="max-w-[1400px] mx-auto w-full h-full flex items-center px-3 relative">
                     <img src="w-[5px] h-screen " alt="" className="h-full w-[1px] bg-white/10 absolute left-0" />
                     <img src="w-[5px] h-screen " alt="" className="h-full w-[1px] bg-white/10 absolute left-[25rem]" />
                     <img src="w-[5px] h-screen " alt="" className="h-full w-[1px] bg-white/10 absolute left-[50rem]" />
 
-                    
+
 
 
                     <div className="w-full relative z-10">
@@ -68,7 +74,7 @@ const Hero = () => {
                 </div>
 
             </div>
-        </div>
+        </motion.div>
     );
 }
 

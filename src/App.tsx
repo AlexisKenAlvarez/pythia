@@ -1,4 +1,4 @@
-import About from "./views/About";
+import Gallery from "./views/Gallery";
 import Hero from "./views/Hero";
 import { useRef } from "react";
 
@@ -24,7 +24,7 @@ const App = () => {
 
   ]
   return (
-    <div className="w-full h-auto relative">
+    <div className="w-full min-h-screen h-auto relative bg-bg">
 
       <nav className="w-full h-auto fixed top-0 left-0 z-30">
         <div className="max-w-[1400px] mx-auto w-full p-3 pt-5">
@@ -41,7 +41,7 @@ const App = () => {
       </nav>
 
       <Hero />
-      <About />
+      <Gallery />
     </div>
   );
 }
