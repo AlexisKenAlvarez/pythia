@@ -50,7 +50,7 @@ const Gallery = () => {
                     {
                         arr.map((items, i) => {
                             return (
-                                <motion.div initial={{ opacity: 0, x: -50, scale: 0.8 }} animate={fixed ? { opacity: 100, x: 0, scale: 1 } : { opacity: 0, x: -20 }} transition={{ duration: 0.5, delay: i * 0.04 }} className="lg:min-w-[20rem] sm:min-w-[10rem] min-w-[5rem] h-[70vh] relative overflow-hidden border-[1px] border-white/20" key={i}>
+                                <motion.div initial={{ opacity: 0, x: -50, scale: 0.8 }} animate={fixed ? { opacity: 100, x: 0, scale: 1 } : { opacity: 0, x: -20 }} transition={{ duration: 0.5, delay: i * 0.04 }} className="lg:min-w-[20rem] sm:min-w-[10rem] min-w-[5rem] h-[70vh] relative overflow-hidden border-[1px] border-white/20" key={items}>
                                     <motion.div style={{ x }} className="w-[15rem] sm:w-[20rem] lg:w-[30rem] h-full">
                                         <img src={`/parallax/${i + 1}.webp`} alt="" className="h-full w-full" />
                                     </motion.div>

@@ -1,6 +1,6 @@
 import Gallery from "./views/Gallery";
 import Hero from "./views/Hero";
-import { useRef, useState } from "react";
+import { useState } from "react";
 import { AnimatePresence, motion } from 'framer-motion'
 import About from "./views/About";
 import About2 from "./views/About2";
