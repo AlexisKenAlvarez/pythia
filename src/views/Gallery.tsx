@@ -39,7 +39,6 @@ const Gallery = () => {
     const xNormal = useTransform(scrollYProgress, [0, 1], [0, -150], { ease: cubicBezier(0.17, 0.67, 0.83, 0.67) })
     const x = useSpring(xNormal, { stiffness: 100, damping: 20 })
 
-    console.log(x)
 
     return (
         <motion.div initial={{ opacity: 0 }} animate={fixed ? { opacity: 100 } : { opacity: 0 }} transition={{ duration: 0.5 }} className="w-full h-[400vh] relative z-10" ref={target}>

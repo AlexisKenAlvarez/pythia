@@ -1,6 +1,6 @@
 
 import { useEffect, useRef, useState } from "react";
-import { motion, useScroll } from 'framer-motion'
+import { motion } from 'framer-motion'
 import BotTop from "../anim/BotTop";
 
 import "slick-carousel/slick/slick.css";
@@ -37,11 +37,6 @@ const Roadmap = () => {
 
     const arr = [...new Array(4)]
 
-    const { scrollYProgress } = useScroll({
-        target: target,
-        offset: ['start end', 'end end']
-    })
-
     const roadList = [
         {
             title: "",
@@ -58,8 +53,6 @@ const Roadmap = () => {
 
 
     ]
-
-    const sliderRef = useRef<Slider>(null)
 
     const settings = {
         dots: false,

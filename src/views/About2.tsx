@@ -1,6 +1,6 @@
 
 import { useEffect, useRef, useState } from "react";
-import { motion, useScroll } from 'framer-motion'
+import { motion } from 'framer-motion'
 import BotTop from "../anim/BotTop";
 
 const About2 = () => {
@@ -31,11 +31,6 @@ const About2 = () => {
 
 
     const arr = [...new Array(4)]
-
-    const { scrollYProgress } = useScroll({
-        target: target,
-        offset: ['start end', 'end end']
-    })
 
     return (
         <motion.div initial={{ opacity: 0 }} animate={fixed ? { opacity: 100 } : { opacity: 0 }} transition={{ duration: 0.5 }} className="w-full h-[200vh] relative z-10" ref={target}>

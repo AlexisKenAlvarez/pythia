@@ -30,7 +30,6 @@ const Hero = () => {
         };
     }, []);
 
-    const arr = [...new Array(3)]
 
     const { scrollYProgress } = useScroll({
         target: target,
