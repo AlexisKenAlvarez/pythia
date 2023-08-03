@@ -31,6 +31,7 @@ const App = () => {
             <About2 />
             <Tokenomics />
             <Roadmap />
+            <footer className="w-full h-2 bg-bg" id="roadmap"></footer>
           </> :
           <motion.div key="LOADER" initial={{ opacity: 0 }} animate={{ opacity: 100 }} transition={{ duration: 2 }} className="w-full h-screen bg-bg overflow-hidden" onClick={handleClick}>
             <motion.h1 exit={{ opacity: 0 }} transition={{ duration: 0.3 }} className="text-center uppercase text-[#A06C21] font-primary text-7xl md:text-9xl mt-[8rem] tracking-widest relative z-10 drop-shadow-xl">pythia</motion.h1>

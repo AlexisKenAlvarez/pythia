@@ -12,17 +12,17 @@ const Nav = () => {
         },
         {
             title: "about",
-            link: "",
+            link: "about",
             icon: <BsFillInfoCircleFill />
         },
         {
             title: "tokenomics",
-            link: "",
+            link: "tokenomics",
             icon: <GiToken />
         },
         {
             title: "roadmap",
-            link: "",
+            link: "roadmap",
             icon: <BsMapFill />
         },
 
@@ -34,15 +34,18 @@ const Nav = () => {
                 <ul className="text-[#A06C21] flex uppercase font-primary gap-x-10 justify-center lg:justify-start">
                     {navList.map((items) => {
                         return (
-                            <li className="" key={items.title}>
-                                <p className="lg:block hidden">
-                                    {items.title}
-                                </p>
+                            <a href={`#${items.link}`} className="" key={items.title}>
+                                <li className="">
+                                    <p className="lg:block hidden">
+                                        {items.title}
+                                    </p>
 
-                                <p className="lg:hidden block">
-                                    {items.icon}
-                                </p>
-                            </li>
+                                    <p className="lg:hidden block">
+                                        {items.icon}
+                                    </p>
+                                </li>
+                            </a>
+
                         )
                     })}
                 </ul>

@@ -12,4 +12,27 @@
         font-family: 'Secondary';
         src: url('../fonts/Adobe.woff') format('woff');
     }
+
+    /* Hide the default scrollbar */
+    ::-webkit-scrollbar {
+        width: 0.8rem;
+        height: 0.5rem;
+    }
+
+    /* Track */
+    ::-webkit-scrollbar-track {
+        background: #121212;
+    }
+
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+        background: #c4a066;
+        border-radius: 1rem;
+        transition: background-color 0.2s;
+    }
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+        background: #999;
+    }
 }
