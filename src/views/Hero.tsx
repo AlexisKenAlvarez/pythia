@@ -69,13 +69,6 @@ const Hero = () => {
                         </BotTop>
 
 
-                        {/* <div className="flex gap-4 mt-32">
-                            {arr.map((items, i) => {
-                                return (
-                                    <img src={`/hero/${i + 1}.webp`} alt={`${i}`} key={i} className="" />
-                                )
-                            })}
-                        </div> */}
                     </div>
                     <div className="w-full relative z-10 lg:block hidden">
                         <BotTop>

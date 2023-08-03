@@ -41,7 +41,7 @@ const About2 = () => {
                     <div className="w-full h-full absolute top-0 left-0 flex gap-x-3">
                         {arr.map((items, i) => {
                             return (
-                                <img src={`/bg/${i + 1}.webp`} alt={`${items + 100}`} className="w-full object-cover" key={i} />
+                                <img src={`/bg/${i + 1}.webp`} alt={`${items + 150}`} className="w-full object-cover" key={i} />
                             )
                         })}
                     </div>
