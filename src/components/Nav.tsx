@@ -31,11 +31,11 @@ const Nav = () => {
     return (
         <nav className="w-full h-auto absolute top-0 left-0 z-30">
             <div className="max-w-[1400px] mx-auto w-full p-3 pt-5">
-                <ul className="text-[#A06C21] flex uppercase font-primary gap-x-10 justify-center lg:justify-start">
+                <ul className=" flex uppercase font-primary gap-x-10 justify-center lg:justify-start">
                     {navList.map((items) => {
                         return (
                             <a href={`#${items.link}`} className="" key={items.title}>
-                                <li className="">
+                                <li className="hover:text-[#FF9700] text-[#A06C21]">
                                     <p className="lg:block hidden">
                                         {items.title}
                                     </p>
