@@ -1,47 +1,45 @@
 import Gallery from "./views/Gallery";
 import Hero from "./views/Hero";
-import { useRef } from "react";
+import { useRef, useState } from "react";
+import { AnimatePresence, motion } from 'framer-motion'
 
 const App = () => {
 
-  const navList = [
-    {
-      title: "home",
-      link: ""
-    },
-    {
-      title: "about",
-      link: ""
-    },
-    {
-      title: "tokenomics",
-      link: ""
-    },
-    {
-      title: "roadmap",
-      link: ""
-    },
+  const [clicked, setClicked] = useState(false)
 
-  ]
+  const handleClick = () => {
+    setClicked(true)
+  }
+
   return (
-    <div className="w-full min-h-screen h-auto relative bg-bg">
+    <div className="w-full min-h-screen h-auto relative bg-bg overflow-hidden">
 
-      <nav className="w-full h-auto fixed top-0 left-0 z-30">
-        <div className="max-w-[1400px] mx-auto w-full p-3 pt-5">
-          <ul className="text-[#A06C21] flex uppercase font-primary gap-x-10">
-            {navList.map((items) => {
-              return (
-                <li className="" key={items.title}>
-                  {items.title}
-                </li>
-              )
-            })}
-          </ul>
-        </div>
-      </nav>
+      <AnimatePresence mode="wait">
+        {clicked ?
+          <>
+            <Hero key="HERO" />
+            <Gallery key="GALLERY" />
+          </> :
+          <motion.div key="LOADER" initial={{ opacity: 0 }} animate={{ opacity: 100 }} transition={{ duration: 2 }} className="w-full h-screen bg-bg overflow-hidden" onClick={handleClick}>
+            <motion.h1 exit={{ opacity: 0 }} transition={{ duration: 0.3 }} className="text-center uppercase text-[#A06C21] font-primary text-7xl md:text-9xl mt-[8rem] tracking-widest relative z-10 drop-shadow-xl">pythia</motion.h1>
 
-      <Hero />
-      <Gallery />
+
+            <motion.img exit={{ opacity: 0 }} transition={{ duration: 0.3 }} src="/loader.webp" alt="Loader" className="mx-auto sm:h-[80vh] absolute bottom-0 sm:-left-16 right-0" />
+
+            <motion.div exit={{ y: -300, opacity: 0 }} transition={{ duration: 1 }} className="w-20 h-20 bg-yellow-200 rounded-full top-[10rem] left-[10rem] lg:left-[20rem] absolute blur-xl "></motion.div>
+            <motion.div exit={{ y: -300, opacity: 0 }} transition={{ duration: 2, delay: 0.1 }} className="w-20 h-20 bg-yellow-200 rounded-full bottom-[10rem] left-[14rem] lg:left-[24rem] absolute blur-xl "></motion.div>
+
+            <motion.div exit={{ y: -200, opacity: 0 }} transition={{ duration: 3, delay: 0.1 }} className="w-20 h-20 bg-yellow-200 rounded-full bottom-[5rem] lg:bottom-[10rem] right-[10rem] lg:right-[20rem] absolute blur-xl"></motion.div>
+            <motion.div exit={{ y: -150, opacity: 0 }} transition={{ duration: 1.5 }} className="w-20 h-20 bg-yellow-200 rounded-full bottom-[20rem] lg:bottom-[30rem] right-[20rem] lg:right-[40rem] absolute blur-xl"></motion.div>
+
+            <p className="text-white font-primary bottom-7 right-7 absolute text-xl opacity-80 lg:block hidden">Click anywhere to explore</p>
+            <p className="text-white font-primary bottom-7 absolute text-xl left-0 right-0 mx-auto opacity-80 lg:hidden block text-center">Tap anywhere to explore</p>
+
+          </motion.div>}
+      </AnimatePresence>
+
+
+
     </div>
   );
 }
