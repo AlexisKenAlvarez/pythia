@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import { motion, useScroll } from 'framer-motion'
 import BotTop from "../anim/BotTop";
 
-const Tokenomics = () => {
+const About = () => {
 
     const target = useRef<HTMLDivElement>(null)
     const [fixed, setFixed] = useState(false);
@@ -55,32 +55,32 @@ const Tokenomics = () => {
 
                     <div className="flex h-full gap-x-10 items-start">
 
-                        <div className="w-full text-right">
-                            {fixed ?
-                                <>
-                                    <BotTop>
-                                        <h1 className="font-primary text-4xl md:text-5xl lg:text-6xl uppercase">Tokenomics</h1>
-                                    </BotTop>
-
-                                    <div className="mt-5 flex flex-col gap-y-5 items-end">
-                                        <BotTop>
-                                            <p className="font-secondary text-subtle lg:text-3xl text-xl leading-tight max-w-[50rem] text-right">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</p>
-                                        </BotTop>
-                                    </div>
-                                </>
-                                : null}
-                        </div>
-
                         <div className="w-[40rem] h-full pt-20 relative pl-[1px] lg:block hidden">
                             <motion.div initial={{ scaleY: 0 }} animate={fixed ? { scaleY: 1 } : { scaleY: 0 }} transition={{ duration: 1 }} className="bottom-0 origin-bottom w-full absolute h-full top-0 left-0 border-[1px] border-[#C4A066] box-content"></motion.div>
                             <motion.div initial={{ opacity: 0 }} animate={fixed ? { opacity: 100 } : {}} transition={{ duration: 1, delay: 1 }} className="w-full h-[30rem] relative ">
-                                <img src='/token.webp' alt="Pythia_About" className="w-full h-full object-cover absolute" />
+                                <img src='/pythia_about.webp' alt="Pythia_About" className="w-full h-full object-cover absolute" />
                             </motion.div>
                         </div>
 
 
 
+                        <div className="w-full">
+                            {fixed ?
+                                <>
+                                    <BotTop>
+                                        <h1 className="font-primary text-6xl">ABOUT</h1>
+                                    </BotTop>
 
+                                    <div className="mt-5 flex flex-col gap-y-5">
+                                        <BotTop>
+                                            <p className="font-secondary text-subtle lg:text-3xl text-xl leading-tight max-w-[50rem]">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</p>
+                                        </BotTop>
+                                    </div>
+                                </>
+                                : null}
+
+
+                        </div>
                     </div>
 
                 </div>
@@ -90,4 +90,4 @@ const Tokenomics = () => {
     );
 }
 
-export default Tokenomics;
+export default About;
