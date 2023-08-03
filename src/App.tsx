@@ -50,8 +50,6 @@ const App = () => {
           </motion.div>}
       </AnimatePresence>
 
-
-
     </div>
   );
 }
