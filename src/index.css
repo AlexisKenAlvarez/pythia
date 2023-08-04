@@ -35,4 +35,8 @@
     ::-webkit-scrollbar-thumb:hover {
         background: #999;
     }
+
+    .shadow-text {
+        text-shadow: 0px 0px 29px rgba(254, 240, 138, 1);
+    }
 }

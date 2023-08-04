@@ -40,7 +40,7 @@ const Hero = () => {
 
     return (
         <motion.div className="w-full h-screen relative bg-bg" ref={target} style={{ opacity }}>
-            <div className={`bg-bg px-5 w-full h-screen text-white ${fixed ? 'fixed top-0 left-0' : 'relative'}`}>
+            <div className={`bg-bg px-5 w-full h-screen z-[15] text-white ${fixed ? 'fixed top-0 left-0' : 'relative'}`}>
 
                 <Nav />
 
@@ -63,9 +63,13 @@ const Hero = () => {
                         </BotTop>
 
                         <BotTop delay={0.15}>
-                            <button className="bg-button rounded-md px-7 py-[5px] font-secondary text-2xl text-black mt-8">
-                                Discover
-                            </button>
+                            <div className="flex items-center gap-x-3 mt-8">
+                                <button className="bg-button hover:bg-[#bd934f] transition-all ease-in-out rounded-md px-7 py-[5px] font-secondary text-2xl text-black">
+                                    Discover
+                                </button>
+                                <img src="/logo.webp" alt="Logo" className="w-20" />
+                            </div>
+
                         </BotTop>
 
 

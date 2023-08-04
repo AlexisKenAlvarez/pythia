@@ -34,7 +34,7 @@ const About = () => {
 
 
     return (
-        <motion.div initial={{ opacity: 0 }} animate={fixed ? { opacity: 100 } : { opacity: 0 }} transition={{ duration: 0.5 }} className="w-full h-[200vh] relative z-10" ref={target}>
+        <motion.div initial={{ opacity: 0 }} animate={fixed ? { opacity: 100 } : { opacity: 0 }} transition={{ duration: 0.5 }} className=" w-full h-[200vh] relative z-10" ref={target}>
             <div className={`bg-bg  w-full h-screen text-white overflow-hidden fixed top-0 left-0 flex items-center px-5`}>
 
 
@@ -42,7 +42,7 @@ const About = () => {
                     <div className="w-full h-full absolute top-0 left-0 flex gap-x-3">
                         {arr.map((items, i) => {
                             return (
-                                <img src={`/bg/${i + 1}.webp`} alt={`${items + 140}`} className="w-full object-cover" key={i} />
+                                <img src={`/bg/${i + 1}.webp`} alt={`${items + 140 + i}`} className="w-full object-cover" key={i} />
                             )
                         })}
                     </div>
